@@ -9,7 +9,7 @@ pipeline {
         stage('Build') { 
             steps {
                sh 'npm --version' 
-               sh 'npm install --cache=".pepe"
+               sh 'npm install --cache=".pepe"'
 ' 
             }
         }
