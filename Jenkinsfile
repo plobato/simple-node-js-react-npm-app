@@ -5,11 +5,18 @@ pipeline {
             args '-p 3000:3000' 
         }
     }
+    environment {
+        CI = 'true' 
+    }
     stages {
-        stage('Build') { 
+        stage('Build') {
             steps {
-               sh 'npm --version' 
-               sh 'npm install --cache=".pepe"'
+                sh 'npm install'
+            }
+        }
+        stage('Test') { 
+            steps {
+                sh './jenkins/scripts/test.sh' 
             }
         }
     }
